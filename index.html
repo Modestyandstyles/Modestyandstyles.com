@@ -1,0 +1,1010 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modesty & Style Trading | Haute Couture Modest Wear & Luxury Lifestyle</title>
+    <!-- Premium Luxury Typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght=400;600;700&family=Playfair+Display:ital,wght=0,400;0,700;1,400&family=Montserrat:wght=300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #fcfbfa; /* Rich Silk White Background */
+            color: #111111;
+            line-height: 1.6;
+        }
+
+        /* Top Announcement Ribbon */
+        .announcement-bar {
+            background-color: #000000; /* Pure Black Ribbon */
+            color: #e6c687; /* Shimmering Gold */
+            text-align: center;
+            padding: 12px 20px;
+            font-size: 0.75rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-weight: 600;
+            border-bottom: 1px solid rgba(230, 198, 135, 0.2);
+        }
+
+        /* Header Navigation */
+        header {
+            background-color: #0f2a1d; /* Deep Majestic Emerald Green */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            border-bottom: 2px solid #e6c687; /* Gold Border Accent */
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Gorgeous Luxury Logo Framework */
+        .brand-logo-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        .logo-crest {
+            font-family: 'Cinzel', serif;
+            font-size: 0.85rem;
+            color: #e6c687;
+            letter-spacing: 6px;
+            margin-bottom: -2px;
+            opacity: 0.9;
+        }
+        .logo-main {
+            font-family: 'Cinzel', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: 5px;
+            color: #e6c687;
+            text-shadow: 0px 2px 12px rgba(230, 198, 135, 0.4);
+            padding: 0 10px;
+        }
+        .logo-divider {
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(to right, transparent, #e6c687, transparent);
+            margin-top: 2px;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            align-items: center;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2.5px;
+            font-weight: 600;
+            color: #ffffff;
+            position: relative;
+            transition: color 0.3s;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0; height: 1px;
+            bottom: -5px; left: 0;
+            background-color: #e6c687;
+            transition: width 0.3s ease;
+        }
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+        nav ul li a:hover {
+            color: #e6c687;
+        }
+        
+        /* Secure Checkout Button with Bag Counter */
+        .cart-btn {
+            background-color: #e6c687 !important;
+            color: #0f2a1d !important; 
+            padding: 12px 24px;
+            border-radius: 0;
+            font-size: 0.8rem !important;
+            letter-spacing: 2px;
+            font-weight: 700 !important;
+            transition: all 0.3s ease !important;
+            border: 1px solid #e6c687;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 15px rgba(230, 198, 135, 0.2);
+            cursor: pointer;
+        }
+        .cart-btn:hover {
+            background: transparent !important;
+            color: #e6c687 !important;
+            transform: translateY(-2px);
+        }
+        #cart-count {
+            background-color: #0f2a1d;
+            color: #e6c687;
+            padding: 2px 7px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            margin-left: 5px;
+        }
+
+        /* Private Owner Customization Control Dashboard */
+        #adminDashboard {
+            display: none;
+            background-color: #000000; /* Pure Black Panel */
+            border-bottom: 3px solid #e6c687;
+            color: #fff;
+            padding: 30px 8%;
+            font-family: 'Montserrat', sans-serif;
+        }
+        .admin-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            align-items: flex-end;
+        }
+        .admin-input-group {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            min-width: 200px;
+        }
+        .admin-input-group label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            color: #e6c687;
+            margin-bottom: 5px;
+            letter-spacing: 2px;
+        }
+        .admin-input-group input, .admin-input-group select {
+            padding: 12px;
+            background: #111111;
+            border: 1px solid #e6c687;
+            color: #fff;
+            font-family: inherit;
+        }
+        .admin-btn {
+            background-color: #e6c687;
+            color: #0f2a1d;
+            padding: 12px 30px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border: none;
+            cursor: pointer;
+            font-size: 0.8rem;
+        }
+        .admin-btn:hover {
+            background-color: #fff;
+        }
+        .delete-overlay-btn {
+            display: none;
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: #d9534f;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            font-weight: 700;
+            font-size: 0.7rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            cursor: pointer;
+            z-index: 10;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+        body.admin-mode .delete-overlay-btn {
+            display: block;
+        }
+
+        /* Haute Couture Hero Showcase */
+        .hero {
+            position: relative;
+            height: 85vh;
+            background: linear-gradient(rgba(15, 14, 12, 0.3), rgba(15, 14, 12, 0.5)), url('https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?q=80&w=1600') no-repeat center center/cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+        }
+        .hero-content {
+            max-width: 850px;
+            padding: 20px;
+        }
+        .hero-content span {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 8px;
+            color: #e6c687;
+            display: inline-block;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        .hero-content h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 4rem;
+            font-weight: 400;
+            margin-bottom: 25px;
+            letter-spacing: 6px;
+            line-height: 1.15;
+        }
+        .hero-content p {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 1.4rem;
+            margin-bottom: 45px;
+            color: #f7f5f0;
+        }
+        .btn {
+            display: inline-block;
+            padding: 18px 50px;
+            background-color: #fff;
+            color: #111;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-weight: 600;
+            transition: all 0.4s ease;
+            border: 1px solid transparent;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .btn:hover {
+            background-color: transparent;
+            color: #fff;
+            border: 1px solid #e6c687;
+            transform: translateY(-3px);
+        }
+
+        /* Section Headings */
+        .section-intro {
+            text-align: center;
+            margin-top: 90px;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            color: #0f2a1d;
+            font-weight: 700;
+        }
+        .section-title {
+            text-align: center;
+            font-family: 'Cinzel', serif;
+            font-size: 2.3rem;
+            font-weight: 600;
+            margin-bottom: 50px;
+            letter-spacing: 4px;
+        }
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px; height: 1px;
+            background-color: #e6c687;
+            margin: 20px auto 0;
+        }
+
+        /* Showroom Grid */
+        .store-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 35px;
+            padding: 0 8%;
+            margin-bottom: 100px;
+        }
+        .product-card {
+            position: relative;
+            background: #ffffff;
+            border: 1px solid #f0ecdf;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(15, 42, 29, 0.08);
+        }
+        .img-container {
+            position: relative;
+            height: 420px;
+            overflow: hidden;
+            background-color: #eae6df;
+        }
+        .product-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 1.2s cubic-bezier(0.15, 0.85, 0.35, 1);
+        }
+        .product-card:hover .product-img {
+            transform: scale(1.06);
+        }
+        .product-info {
+            padding: 25px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            justify-content: space-between;
+        }
+        .product-category {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #8c8573;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        .product-name {
+            font-family: 'Cinzel', serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #0f2a1d;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+        .product-price {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: #111111;
+            margin-bottom: 20px;
+        }
+
+        .add-to-cart-btn {
+            background-color: transparent;
+            border: 1px solid #0f2a1d;
+            color: #0f2a1d;
+            padding: 13px 25px;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+        .add-to-cart-btn:hover {
+            background-color: #0f2a1d;
+            color: #e6c687;
+            border-color: #0f2a1d;
+        }
+
+        /* Trusted Gateway Section */
+        .trust-badges-section {
+            background-color: #fff;
+            padding: 60px 5%;
+            text-align: center;
+            border-top: 1px solid #f0ecdf;
+            border-bottom: 1px solid #f0ecdf;
+            margin-bottom: 80px;
+        }
+        .trust-badges-section p {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: #111111; 
+            font-weight: 700;
+            margin-bottom: 30px;
+        }
+        .badge-grid {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 45px;
+            flex-wrap: wrap;
+            padding: 10px 0;
+        }
+        .logo-img {
+            height: 32px;
+            width: auto;
+            object-fit: contain;
+            transition: all 0.3s ease;
+        }
+        .logo-img:hover {
+            transform: scale(1.05);
+        }
+        .qatar-bank-logo {
+            height: 38px;
+        }
+        .paylater-badge {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            font-weight: 700;
+            background-color: #0f2a1d;
+            color: #e6c687;
+            padding: 8px 18px;
+            letter-spacing: 2px;
+            border: 1px solid #e6c687;
+        }
+
+        /* LUXURY METRICS */
+        .luxury-metrics {
+            background: linear-gradient(135deg, #0f2a1d 0%, #06140e 100%);
+            color: #fff;
+            padding: 80px 8%;
+            text-align: center;
+            border-top: 1px solid #e6c687;
+        }
+        .metrics-grid {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 80px;
+            flex-wrap: wrap;
+        }
+        .metric-item .number {
+            font-family: 'Cinzel', serif;
+            font-size: 3.5rem;
+            color: #e6c687;
+            font-weight: 700;
+            letter-spacing: 2px;
+            display: block;
+            margin-bottom: 5px;
+        }
+        .metric-item .label {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: #ffffff; 
+            font-weight: 600;
+        }
+
+        /* Reviews Section */
+        .editorial-review-bg {
+            background-color: #f2ede4; 
+            padding: 120px 8%;
+        }
+        .reviews-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+        }
+        .review-card {
+            background-color: #fff;
+            padding: 50px 45px;
+            border-left: 3px solid #0f2a1d;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+        }
+        .stars {
+            color: #e6c687;
+            font-size: 1rem;
+            margin-bottom: 25px;
+            letter-spacing: 4px;
+        }
+        .review-text {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 1.15rem;
+            color: #1a1a1a;
+            margin-bottom: 30px;
+            line-height: 1.8;
+        }
+        .customer-name {
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #111111; 
+        }
+
+        /* Checkout Modal */
+        .modal {
+            display: none; 
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-color: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(10px);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            overflow-y: auto;
+            padding: 20px;
+        }
+        .modal-content {
+            background-color: #fff;
+            padding: 45px 40px;
+            width: 100%;
+            max-width: 550px;
+            position: relative;
+            box-shadow: 0 30px 70px rgba(0,0,0,0.4);
+            border-top: 4px solid #0f2a1d;
+        }
+        .close-modal {
+            position: absolute;
+            top: 25px; right: 25px;
+            font-size: 1.8rem;
+            color: #999;
+            cursor: pointer;
+        }
+        .modal-content h3 {
+            font-family: 'Cinzel', serif;
+            font-size: 1.7rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            text-align: center;
+            letter-spacing: 2px;
+            color: #0f2a1d;
+        }
+        .modal-subtitle {
+            text-align: center;
+            font-size: 0.75rem;
+            color: #e6c687;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 30px;
+            font-weight: 700;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+            letter-spacing: 2px;
+            color: #111111;
+            font-weight: 600;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 14px;
+            border: 1px solid #cbd2cd;
+            background-color: #faf9f6;
+            font-family: inherit;
+            font-size: 0.95rem;
+            transition: all 0.3s;
+            color: #111;
+        }
+        .form-group input:focus {
+            outline: none;
+            border-color: #0f2a1d;
+            background-color: #fff;
+        }
+        
+        .whatsapp-notice {
+            background-color: #eef9f3;
+            border-left: 3px solid #25d366;
+            padding: 15px;
+            font-size: 0.85rem;
+            color: #128c7e;
+            margin-bottom: 25px;
+            font-weight: 600;
+        }
+
+        .pay-btn {
+            width: 100%;
+            background: linear-gradient(135deg, #0f2a1d 0%, #06140e 100%);
+            color: white;
+            padding: 18px;
+            border: none;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 700;
+            transition: background 0.3s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+        .pay-btn:hover {
+            background: #25d366;
+            color: #ffffff;
+        }
+        .wa-btn-icon {
+            width: 22px;
+            height: 22px;
+            vertical-align: middle;
+        }
+
+        /* --- DOWNSIDE FOOTER LINE SECTION --- */
+        footer {
+            background-color: #000000; /* PURE MATTE BLACK COLOR */
+            color: #ffffff; /* CLEAR WHITE TEXT */
+            text-align: center;
+            padding: 90px 20px;
+            font-size: 0.9rem;
+            letter-spacing: 2.5px;
+            border-top: 2px solid #e6c687; /* GOLD LINE ON TOP */
+        }
+        footer .footer-logo {
+            font-family: 'Cinzel', serif;
+            color: #e6c687; /* GOLD BRAND NAME */
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            display: block;
+            letter-spacing: 6px;
+        }
+        footer .footer-text {
+            color: #ffffff; 
+            max-width: 600px;
+            margin: 0 auto 25px auto;
+            font-weight: 400;
+            line-height: 1.8;
+            font-size: 0.95rem;
+            opacity: 0.85;
+        }
+        footer .web-address {
+            font-family: 'Cinzel', serif;
+            color: #e6c687; /* GOLD WEBSITE ADDRESS */
+            font-size: 1.1rem;
+            letter-spacing: 3px;
+            text-decoration: none;
+            display: inline-block;
+            margin-bottom: 20px;
+            font-weight: 600;
+            transition: opacity 0.3s;
+        }
+        footer .web-address:hover {
+            opacity: 0.7;
+        }
+        footer .copyright {
+            color: rgba(230, 198, 135, 0.6); 
+            margin-top: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        .admin-key {
+            cursor: pointer;
+            opacity: 0.2;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Upper Announcement Ribbon -->
+    <div class="announcement-bar">
+        ✨ Free Premium Express Delivery Across GCC & Worldwide
+    </div>
+
+    <!-- Private Owner Live Dashboard Pane -->
+    <div id="adminDashboard">
+        <h4 style="font-family: 'Cinzel', serif; color: #e6c687; margin-bottom: 15px; letter-spacing: 2px;">⚡ Live Store Customization Console</h4>
+        <div class="admin-grid">
+            <div class="admin-input-group">
+                <label>Item Category</label>
+                <select id="new-cat">
+                    <option value="Abayas & Apparel">Abayas & Apparel</option>
+                    <option value="Scarfs & Hijabs">Scarfs & Hijabs</option>
+                    <option value="Leather Goods">Leather Goods</option>
+                    <option value="Fine Jewellery">Fine Jewellery</option>
+                    <option value="Timepieces">Timepieces</option>
+                    <option value="Cosmetics & Beauty">Cosmetics & Beauty</option>
+                </select>
+            </div>
+            <div class="admin-input-group">
+                <label>Product Display Name</label>
+                <input type="text" id="new-name" placeholder="e.g., Royal Diamond Abaya">
+            </div>
+            <div class="admin-input-group">
+                <label>Price Vector (QAR)</label>
+                <input type="number" id="new-price" placeholder="e.g., 1500">
+            </div>
+            <div class="admin-input-group">
+                <label>Unsplash Image Address URL</label>
+                <input type="text" id="new-img" placeholder="Paste image link here">
+            </div>
+            <button class="admin-btn" onclick="addNewProduct()">Add Live Item</button>
+            <button class="admin-btn" style="background:#d9534f; color:#fff;" onclick="toggleAdminMode()">Exit Portal</button>
+        </div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <header>
+        <div class="brand-logo-container">
+            <div class="logo-crest">HAUTE COUTURE</div>
+            <div class="logo-main">MODESTY & STYLE</div>
+            <div class="logo-divider"></div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#showroom">Collection</a></li>
+                <li><a onclick="promptAdmin()" style="color: #e6c687; font-weight: 700;">Owner Portal</a></li>
+                <li><div class="cart-btn" onclick="openPayment()">Checkout <span id="cart-count">0</span></div></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Header -->
+    <section class="hero">
+        <div class="hero-content">
+            <span>Haute Couture Collection</span>
+            <h1>Where Modesty Meets Luxury</h1>
+            <p>Impeccably tailored modest wear alongside matching statement accessories curated for the elegant lady.</p>
+            <a href="#showroom" class="btn">Enter Store</a>
+        </div>
+    </section>
+
+    <!-- Showroom Grid Section -->
+    <div class="section-intro" id="showroom">The Showroom</div>
+    <h2 class="section-title">Bespoke Curation</h2>
+    
+    <!-- Dynamic Store Engine Container -->
+    <section class="store-grid" id="productShowcaseContainer">
+        <!-- Items load dynamically below -->
+    </section>
+
+    <!-- Trusted Gateway Verification Section with Brand Logos -->
+    <section class="trust-badges-section">
+        <p>🔒 Guaranteed Safe & Verified Checkout Partners</p>
+        <div class="badge-grid">
+            <img class="logo-img" src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg" alt="Visa">
+            <img class="logo-img" src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Mastercard_2019_logo.svg" alt="Mastercard">
+            <img class="logo-img qatar-bank-logo" src="https://upload.wikimedia.org/wikipedia/commons/d/df/QNB_Group_logo.svg" alt="QNB">
+            <img class="logo-img qatar-bank-logo" src="https://upload.wikimedia.org/wikipedia/en/3/36/The_Commercial_Bank_of_Qatar_logo.png" alt="CBQ">
+            <img class="logo-img qatar-bank-logo" src="https://upload.wikimedia.org/wikipedia/en/e/e0/Doha_Bank_Logo.png" alt="Doha Bank">
+            <div class="paylater-badge">PAY LATER</div>
+        </div>
+    </section>
+
+    <!-- LUXURY METRICS -->
+    <section class="luxury-metrics">
+        <div class="metrics-grid">
+            <div class="metric-item">
+                <span class="number">50K+</span>
+                <span class="label">Elite Instagram Followers</span>
+            </div>
+            <div class="metric-item">
+                <span class="number">100%</span>
+                <span class="label">Premium Bespoke Fabrics</span>
+            </div>
+            <div class="metric-item">
+                <span class="number">15,000+</span>
+                <span class="label">Regal Clients Worldwide</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- High-End Reviews Section -->
+    <div class="editorial-review-bg">
+        <div class="section-intro">Bespoke Reviews</div>
+        <h2 class="section-title">Appreciated By Elegant Women</h2>
+        
+        <section class="reviews-container">
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p class="review-text">"The heavy premium drape of my Couture Abaya is phenomenal. It commands elegance effortlessly at every private event."</p>
+                <p class="customer-name">Reem Al-Hajri — Verified Client</p>
+            </div>
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p class="review-text">"The silk chiffon blends feel like luxury against the skin. Stays flawlessly in place all day long. Truly unmatched quality."</p>
+                <p class="customer-name">Fatima Al-Suwaidi — Verified Client</p>
+            </div>
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p class="review-text">"Bespoke embroidery on beautiful flowing fabrics. Modesty & Style has become my absolute favorite online boutique."</p>
+                <p class="customer-name">Hind Al-Maktoum — Verified Client</p>
+            </div>
+        </section>
+    </div>
+
+    <!-- WhatsApp Checkout Modal Screen -->
+    <div class="modal" id="paymentModal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closePayment()">&times;</span>
+            <h3>Secure Checkout</h3>
+            <div class="modal-subtitle">Complete via WhatsApp</div>
+            
+            <div class="whatsapp-notice">
+                💬 Your shopping bag parameters will be securely forwarded directly to our customer care team via WhatsApp to finalize dispatch parameters.
+            </div>
+
+            <form onsubmit="sendWhatsAppOrder(event)">
+                <div class="form-group">
+                    <label>Full Customer Name</label>
+                    <input type="text" id="cust-name" placeholder="Aisha Al-Thani" required>
+                </div>
+                <div class="form-group">
+                    <label>Shipping / Delivery Address</label>
+                    <input type="text" id="cust-address" placeholder="Villa 14, Al Waab Street, Doha" required>
+                </div>
+                <div class="form-group">
+                    <label>Contact Phone Number</label>
+                    <input type="tel" id="cust-phone" placeholder="+974 5555 1234" required>
+                </div>
+
+                <button type="submit" class="pay-btn">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WA" class="wa-btn-icon">
+                    <span>Send Order via WhatsApp</span>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Downside Footer Section (Pure Black Background) -->
+    <footer>
+        <span class="footer-logo">MODESTY & STYLE TRADING</span>
+        <a href="https://www.modestyandstyles.com" class="web-address" target="_blank">www.modestyandstyles.com</a>
+        <p class="footer-text">We craft timeless modest attire and carry bespoke luxury items for women who value high-end class and heritage elegance. Our garments feature elite-tier textiles engineered flawlessly for maximum comfort and premium drape lines.</p>
+        <p class="copyright">&copy; 2026 Modesty & Style Trading. All Rights Reserved. <span class="admin-key" onclick="promptAdmin()">🔑</span></p>
+    </footer>
+
+    <script>
+        // Master Catalog System Architecture
+        let defaultProducts = [
+            { id: 1, category: "Abayas & Apparel", name: "Couture Silk Abaya", price: 1200, img: "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?q=80&w=600" },
+            { id: 2, category: "Abayas & Apparel", name: "Royal Jelabiya", price: 1450, img: "https://images.unsplash.com/photo-1608748010899-18f300247112?q=80&w=600" },
+            { id: 3, category: "Scarfs & Hijabs", name: "Premium Chiffon Scarf", price: 180, img: "https://images.unsplash.com/photo-1601924994987-69e26d50dc26?q=80&w=600" },
+            { id: 4, category: "Leather Goods", name: "Bespoke Leather Handbag", price: 2100, img: "https://images.unsplash.com/photo-1584917865442-de89df76afd3?q=80&w=600" },
+            { id: 5, category: "Fine Jewellery", name: "Artisanal Statement Set", price: 450, img: "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?q=80&w=600" },
+            { id: 6, category: "Timepieces", name: "Elite Emerald Watch", price: 1850, img: "https://images.unsplash.com/photo-1524805444758-089113d48a6d?q=80&w=600" },
+            { id: 7, category: "Cosmetics & Beauty", name: "Velvet Lipstick Collection", price: 320, img: "https://images.unsplash.com/photo-1596462502278-27bfdc403348?q=80&w=600" }
+        ];
+
+        let storeProducts = JSON.parse(localStorage.getItem('modesty_catalog')) || defaultProducts;
+        let cartItems = [];
+        let totalValue = 0;
+
+        function renderShowroom() {
+            const container = document.getElementById('productShowcaseContainer');
+            container.innerHTML = "";
+            
+            storeProducts.forEach(product => {
+                const card = document.createElement('div');
+                card.className = "product-card";
+                card.innerHTML = `
+                    <button class="delete-overlay-btn" onclick="deleteProduct(${product.id})">❌ Delete</button>
+                    <div class="img-container">
+                        <img class="product-img" src="${product.img}" alt="${product.name}">
+                    </div>
+                    <div class="product-info">
+                        <div>
+                            <span class="product-category">${product.category}</span>
+                            <h3 class="product-name">${product.name}</h3>
+                        </div>
+                        <div>
+                            <p class="product-price">${Number(product.price).toLocaleString()} QAR</p>
+                            <button class="add-to-cart-btn" onclick="addToCart('${product.name.replace(/'/g, "\\'")}', ${product.price})">Add to Bag &rarr;</button>
+                        </div>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        function addToCart(itemName, price) {
+            cartItems.push({name: itemName, price: price});
+            totalValue += price;
+            document.getElementById('cart-count').innerText = cartItems.length;
+            alert(itemName + ' successfully placed in your luxury shopping bag.');
+        }
+
+        function openPayment() {
+            if(cartItems.length === 0) {
+                alert("Your shopping bag is empty. Please select a luxury garment first.");
+                return;
+            }
+            document.getElementById('paymentModal').style.display = 'flex';
+        }
+
+        function closePayment() {
+            document.getElementById('paymentModal').style.display = 'none';
+        }
+
+        function promptAdmin() {
+            const credential = prompt("Please input your secure Owner Master Access Key code:");
+            if (credential === "admin123") {
+                document.getElementById('adminDashboard').style.display = 'block';
+                document.body.classList.add('admin-mode');
+                window.scrollTo({top: 0, behavior: 'smooth'});
+            } else if (credential !== null) {
+                alert("Invalid configuration permission denied.");
+            }
+        }
+
+        function toggleAdminMode() {
+            document.getElementById('adminDashboard').style.display = 'none';
+            document.body.classList.remove('admin-mode');
+        }
+
+        function addNewProduct() {
+            const cat = document.getElementById('new-cat').value;
+            const name = document.getElementById('new-name').value;
+            const price = document.getElementById('new-price').value;
+            let img = document.getElementById('new-img').value;
+
+            if(!name || !price) {
+                alert("Please provide complete name and pricing values.");
+                return;
+            }
+            if(!img) {
+                img = "https://images.unsplash.com/photo-1549298916-b41d501d3772?q=80&w=600";
+            }
+
+            const newProductObj = {
+                id: Date.now(),
+                category: cat,
+                name: name,
+                price: parseInt(price),
+                img: img
+            };
+
+            storeProducts.push(newProductObj);
+            localStorage.setItem('modesty_catalog', JSON.stringify(storeProducts));
+            renderShowroom();
+            
+            document.getElementById('new-name').value = "";
+            document.getElementById('new-price').value = "";
+            document.getElementById('new-img').value = "";
+            alert("New boutique item successfully declared and loaded live.");
+        }
+
+        function deleteProduct(productId) {
+            if(confirm("Are you absolutely sure you want to permanently withdraw this luxury item from public view?")) {
+                storeProducts = storeProducts.filter(p => p.id !== productId);
+                localStorage.setItem('modesty_catalog', JSON.stringify(storeProducts));
+                renderShowroom();
+            }
+        }
+
+        function sendWhatsAppOrder(event) {
+            event.preventDefault();
+            const businessPhoneNumber = "97477736075";
+
+            const name = document.getElementById('cust-name').value;
+            const address = document.getElementById('cust-address').value;
+            const phone = document.getElementById('cust-phone').value;
+
+            let itemSummary = {};
+            cartItems.forEach(item => {
+                itemSummary[item.name] = (itemSummary[item.name] || 0) + 1;
+            });
+
+            let itemsText = "";
+            for (let item in itemSummary) {
+                itemsText += `• ${item} (Qty: ${itemSummary[item]})\n`;
+            }
+
+            const textMessage = 
+`✨ *NEW ONLINE PLATFORM ORDER* ✨
+
+*Customer Name:* ${name}
+*Delivery Address:* ${address}
+*Contact Phone:* ${phone}
+
+📌 *Selected Items:*
+${itemsText}
+*Total Bag Value:* ${totalValue.toLocaleString()} QAR
+
+Thank you! Please process my luxury package invoice configuration instantly.`;
+
+            const encodedMessage = encodeURIComponent(textMessage);
+            const whatsappUrl = `https://wa.me/${businessPhoneNumber}?text=${encodedMessage}`;
+            
+            cartItems = [];
+            totalValue = 0;
+            document.getElementById('cart-count').innerText = 0;
+            closePayment();
+            window.open(whatsappUrl, '_blank');
+        }
+
+        renderShowroom();
+    </script>
+</body>
+</html>
