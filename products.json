@@ -2,50 +2,85 @@
   {
     "id": 1,
     "category": "Abayas & Apparel",
-    "name": "Couture Silk Abaya",
-    "price": 1200,
-    "img": "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?q=80&w=600"
+    "name": "Navy Button Abaya",
+    "price": 100,
+    "img": "products/abaya/navy-button-abaya.jpg"
   },
   {
     "id": 2,
     "category": "Abayas & Apparel",
-    "name": "Royal Jelabiya",
-    "price": 1450,
-    "img": "https://images.unsplash.com/photo-1608748010899-18f300247112?q=80&w=600"
+    "name": "Black Embroidered Abaya",
+    "price": 100,
+    "img": "products/abaya/black-embroidered-abaya.jpg"
   },
   {
     "id": 3,
-    "category": "Scarfs & Hijabs",
-    "name": "Premium Chiffon Scarf",
-    "price": 180,
-    "img": "https://images.unsplash.com/photo-1601924994987-69e26d50dc26?q=80&w=600"
+    "category": "Abayas & Apparel",
+    "name": "Black Jacquard Abaya",
+    "price": 100,
+    "img": "products/abaya/black-jacquard-abaya.jpg"
   },
   {
     "id": 4,
-    "category": "Leather Goods",
-    "name": "Bespoke Leather Handbag",
-    "price": 2100,
-    "img": "https://images.unsplash.com/photo-1584917865442-de89df76afd3?q=80&w=600"
+    "category": "Abayas & Apparel",
+    "name": "Black Classic Abaya",
+    "price": 100,
+    "img": "products/abaya/black-classic-abaya.jpg"
   },
   {
     "id": 5,
-    "category": "Fine Jewellery",
-    "name": "Artisanal Statement Set",
-    "price": 450,
-    "img": "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?q=80&w=600"
+    "category": "Abayas & Apparel",
+    "name": "Black Pleated Abaya",
+    "price": 100,
+    "img": "products/abaya/black-pleated-abaya.jpg"
   },
   {
     "id": 6,
-    "category": "Timepieces",
-    "name": "Elite Emerald Watch",
-    "price": 1850,
-    "img": "https://images.unsplash.com/photo-1524805444758-089113d48a6d?q=80&w=600"
+    "category": "Abayas & Apparel",
+    "name": "Black Heritage Embroidery Abaya",
+    "price": 100,
+    "img": "products/abaya/black-heritage-embroidery-abaya.jpg"
   },
   {
     "id": 7,
-    "category": "Cosmetics & Beauty",
-    "name": "Velvet Lipstick Collection",
-    "price": 320,
-    "img": "https://images.unsplash.com/photo-1596462502278-27bfdc403348?q=80&w=600"
+    "category": "Abayas & Apparel",
+    "name": "Navy Jacquard Abaya",
+    "price": 100,
+    "img": "products/abaya/navy-jacquard-abaya.jpg"
+  },
+  {
+    "id": 8,
+    "category": "Abayas & Apparel",
+    "name": "Teal Button Abaya",
+    "price": 100,
+    "img": "products/abaya/teal-button-abaya.jpg"
+  },
+  {
+    "id": 9,
+    "category": "Abayas & Apparel",
+    "name": "Grey Button Abaya",
+    "price": 100,
+    "img": "products/abaya/grey-button-abaya.jpg"
+  },
+  {
+    "id": 10,
+    "category": "Abayas & Apparel",
+    "name": "Sage Floral Abaya",
+    "price": 100,
+    "img": "products/abaya/sage-floral-abaya.jpg"
+  },
+  {
+    "id": 11,
+    "category": "Abayas & Apparel",
+    "name": "Beige Ginkgo Abaya",
+    "price": 100,
+    "img": "products/abaya/beige-ginkgo-abaya.jpg"
+  },
+  {
+    "id": 12,
+    "category": "Abayas & Apparel",
+    "name": "Black Open Abaya",
+    "price": 100,
+    "img": "products/abaya/black-open-abaya.jpg"
   }
 ]
