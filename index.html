@@ -236,6 +236,7 @@
             { id: 7, category: "Cosmetics & Beauty", name: "Velvet Lipstick Collection", price: 320, img: "https://images.unsplash.com/photo-1596462502278-27bfdc403348?q=80&w=600" }
         ];
         let storeProducts = JSON.parse(localStorage.getItem('modesty_catalog')) || defaultProducts;
+        var OWNER_WHATSAPP = ""; // <-- Owner: put your WhatsApp number here, country code first, digits only. Example: "97455551234"
         let cartItems = [];
         let totalValue = 0;
 
@@ -310,4 +311,110 @@
                 return;
             }
             if (!img) {
-                img = "https://images.unsplash.com/photo-1549298916-b41d501d3772?q
+                img = "https://images.unsplash.com/photo-1549298916-b41d501d3772?q=80&w=600";
+            } else if (img.indexOf('http') !== 0) {
+                if (img.charAt(0) === '/') { img = img.slice(1); }
+                img = 'products/' + img;
+            }
+            const newItem = { id: Date.now(), category: cat, name: name, price: Number(price), img: img };
+            storeProducts.push(newItem);
+            saveCatalog();
+            renderShowroom();
+            document.getElementById('new-name').value = "";
+            document.getElementById('new-price').value = "";
+            document.getElementById('new-img').value = "";
+            alert(name + " has been added to your showroom.");
+        }
+
+        function deleteProduct(productId) {
+            if (!confirm("Remove this product from your showroom?")) { return; }
+            storeProducts = storeProducts.filter(function (p) { return p.id !== productId; });
+            saveCatalog();
+            renderShowroom();
+        }
+
+        function saveCatalog() {
+            localStorage.setItem('modesty_catalog', JSON.stringify(storeProducts));
+        }
+
+        function publishCatalog() {
+            const text = JSON.stringify(storeProducts, null, 2);
+            const done = function () { alert("Catalogue copied. Open products.json on GitHub, replace everything with what you copied, then commit."); };
+            const fallback = function () { window.prompt("Copy this into products.json on GitHub:", text); };
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(text).then(done, fallback);
+            } else {
+                fallback();
+            }
+        }
+
+        function resetCatalog() {
+            if (!confirm("Discard your local changes and show the published catalogue?")) { return; }
+            localStorage.removeItem('modesty_catalog');
+            location.reload();
+        }
+
+        function sendWhatsAppOrder(event) {
+            event.preventDefault();
+            if (!OWNER_WHATSAPP) {
+                alert("Owner: please add your WhatsApp number to OWNER_WHATSAPP in index.html before taking orders.");
+                return;
+            }
+            const custName = document.getElementById('cust-name').value;
+            const custAddress = document.getElementById('cust-address').value;
+            const custPhone = document.getElementById('cust-phone').value;
+            let message = "New order from modestyandstyles.com\n\n";
+            cartItems.forEach(function (item, i) {
+                message += (i + 1) + ". " + item.name + " - " + Number(item.price).toLocaleString() + " QAR\n";
+            });
+            message += "\nTotal: " + Number(totalValue).toLocaleString() + " QAR\n\n";
+            message += "Name: " + custName + "\n";
+            message += "Delivery address: " + custAddress + "\n";
+            message += "Contact number: " + custPhone;
+            window.open("https://wa.me/" + OWNER_WHATSAPP + "?text=" + encodeURIComponent(message), "_blank");
+            closePayment();
+        }
+
+        function loadCatalog() {
+            const draft = localStorage.getItem('modesty_catalog');
+            if (draft) {
+                try { storeProducts = JSON.parse(draft); } catch (e) { }
+                renderShowroom();
+                return;
+            }
+            fetch('products.json').then(function (r) {
+                return r.ok ? r.json() : null;
+            }).then(function (data) {
+                if (Array.isArray(data)) { storeProducts = data; }
+                renderShowroom();
+            }).catch(function () { renderShowroom(); });
+        }
+
+        function buildAdminExtras() {
+            const grid = document.querySelector('.admin-grid');
+            if (!grid) { return; }
+            const publishBtn = document.createElement('button');
+            publishBtn.className = 'admin-btn';
+            publishBtn.textContent = 'Copy Catalogue To Publish';
+            publishBtn.onclick = publishCatalog;
+            grid.appendChild(publishBtn);
+            const resetBtn = document.createElement('button');
+            resetBtn.className = 'admin-btn';
+            resetBtn.style.background = '#555555';
+            resetBtn.style.color = '#ffffff';
+            resetBtn.textContent = 'Reset To Published';
+            resetBtn.onclick = resetCatalog;
+            grid.appendChild(resetBtn);
+            const imgField = document.getElementById('new-img');
+            if (imgField) { imgField.placeholder = 'e.g. royal-abaya.jpg'; }
+            const note = document.createElement('div');
+            note.style.cssText = 'flex-basis:100%; font-size:0.7rem; color:#e6c687; letter-spacing:1px; line-height:2; margin-top:14px;';
+            note.innerHTML = 'PHOTO: upload your image into the <b>products</b> folder of your GitHub repository, then type only the file name above, for example royal-abaya.jpg<br>PUBLISH: press Copy Catalogue To Publish, then paste it into products.json on GitHub so every customer sees the same showroom.';
+            grid.appendChild(note);
+        }
+
+        buildAdminExtras();
+        loadCatalog();
+    </script>
+</body>
+</html>
