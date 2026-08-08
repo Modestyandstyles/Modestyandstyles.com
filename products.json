@@ -1,0 +1,51 @@
+[
+  {
+    "id": 1,
+    "category": "Abayas & Apparel",
+    "name": "Couture Silk Abaya",
+    "price": 1200,
+    "img": "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?q=80&w=600"
+  },
+  {
+    "id": 2,
+    "category": "Abayas & Apparel",
+    "name": "Royal Jelabiya",
+    "price": 1450,
+    "img": "https://images.unsplash.com/photo-1608748010899-18f300247112?q=80&w=600"
+  },
+  {
+    "id": 3,
+    "category": "Scarfs & Hijabs",
+    "name": "Premium Chiffon Scarf",
+    "price": 180,
+    "img": "https://images.unsplash.com/photo-1601924994987-69e26d50dc26?q=80&w=600"
+  },
+  {
+    "id": 4,
+    "category": "Leather Goods",
+    "name": "Bespoke Leather Handbag",
+    "price": 2100,
+    "img": "https://images.unsplash.com/photo-1584917865442-de89df76afd3?q=80&w=600"
+  },
+  {
+    "id": 5,
+    "category": "Fine Jewellery",
+    "name": "Artisanal Statement Set",
+    "price": 450,
+    "img": "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?q=80&w=600"
+  },
+  {
+    "id": 6,
+    "category": "Timepieces",
+    "name": "Elite Emerald Watch",
+    "price": 1850,
+    "img": "https://images.unsplash.com/photo-1524805444758-089113d48a6d?q=80&w=600"
+  },
+  {
+    "id": 7,
+    "category": "Cosmetics & Beauty",
+    "name": "Velvet Lipstick Collection",
+    "price": 320,
+    "img": "https://images.unsplash.com/photo-1596462502278-27bfdc403348?q=80&w=600"
+  }
+]
