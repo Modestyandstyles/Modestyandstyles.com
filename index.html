@@ -9,7 +9,6 @@
         html { scroll-behavior: smooth; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Montserrat', sans-serif; background-color: #fcfbfa; color: #111111; line-height: 1.6; }
-        .announcement-bar { background-color: #000000; color: #e6c687; text-align: center; padding: 12px 20px; font-size: 0.75rem; letter-spacing: 3px; text-transform: uppercase; font-weight: 600; border-bottom: 1px solid rgba(230, 198, 135, 0.2); }
         header { background-color: #0f2a1d; display: flex; justify-content: space-between; align-items: center; padding: 20px 8%; border-bottom: 2px solid #e6c687; position: sticky; top: 0; z-index: 1000; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2); }
         .brand-logo-container { display: flex; flex-direction: column; align-items: center; text-align: center; }
         .logo-crest { font-family: 'Cinzel', serif; font-size: 0.85rem; color: #e6c687; letter-spacing: 6px; margin-bottom: -2px; opacity: 0.9; }
@@ -33,10 +32,10 @@
         .admin-btn:hover { background-color: #fff; }
         .delete-overlay-btn { display: none; position: absolute; top: 15px; right: 15px; background-color: #d9534f; color: white; border: none; padding: 8px 15px; font-weight: 700; font-size: 0.7rem; letter-spacing: 1px; text-transform: uppercase; cursor: pointer; z-index: 10; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
         body.admin-mode .delete-overlay-btn { display: block; }
-        .hero { position: relative; height: 85vh; background: linear-gradient(rgba(15, 14, 12, 0.3), rgba(15, 14, 12, 0.5)), url('https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?q=80&w=1600') no-repeat center center/cover; display: flex; justify-content: center; align-items: center; text-align: center; color: #fff; }
+        .hero { position: relative; height: 85vh; background: linear-gradient(rgba(15, 32, 25, 0.42), rgba(15, 32, 25, 0.62)), url('https://images.pexels.com/photos/29273204/pexels-photo-29273204.jpeg?auto=compress&cs=tinysrgb&w=1800') no-repeat center 26%/cover; display: flex; justify-content: center; align-items: center; text-align: center; color: #fff; }
         .hero-content { max-width: 850px; padding: 20px; }
         .hero-content span { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 8px; color: #e6c687; display: inline-block; margin-bottom: 20px; font-weight: 600; }
-        .hero-content h1 { font-family: 'Cinzel', serif; font-size: 4rem; font-weight: 400; margin-bottom: 25px; letter-spacing: 6px; line-height: 1.15; }
+        .hero-content h1 { font-family: 'Cinzel', serif; font-size: clamp(1.9rem, 4vw, 2.6rem); font-weight: 400; margin-bottom: 25px; letter-spacing: 2px; line-height: 1.25; }
         .hero-content p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.4rem; margin-bottom: 45px; color: #f7f5f0; }
         .btn { display: inline-block; padding: 18px 50px; background-color: #fff; color: #111; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 3px; font-weight: 600; transition: all 0.4s ease; border: 1px solid transparent; cursor: pointer; text-decoration: none; }
         .btn:hover { background-color: transparent; color: #fff; border: 1px solid #e6c687; transform: translateY(-3px); }
@@ -91,8 +90,6 @@
     </style>
 </head>
 <body>
-    <div class="announcement-bar">✨ Free Premium Express Delivery Across GCC & Worldwide</div>
-
     <div id="adminDashboard">
         <h4 style="font-family: 'Cinzel', serif; color: #e6c687; margin-bottom: 15px; letter-spacing: 2px;">⚡ Store Manager</h4>
         <div class="admin-grid">
@@ -155,14 +152,13 @@
     <section class="store-grid" id="productShowcaseContainer"></section>
 
     <section class="trust-badges-section">
-        <p>🔒 Guaranteed Safe & Verified Checkout Partners</p>
+        <p>🔒 Trusted & Secure Payment Methods</p>
         <div class="badge-grid">
-            <span class="paylater-badge">VISA</span>
-            <span class="paylater-badge">MASTERCARD</span>
-            <span class="paylater-badge">QNB</span>
-            <span class="paylater-badge">COMMERCIAL BANK</span>
-            <span class="paylater-badge">DOHA BANK</span>
-            <span class="paylater-badge">PAY LATER</span>
+            <span class="paylater-badge">💵 CASH ON DELIVERY</span>
+            <span class="paylater-badge">APPLE PAY</span>
+            <span class="paylater-badge">GOOGLE PAY</span>
+            <span class="paylater-badge">PAYPAL</span>
+            <span class="paylater-badge">VISA / MASTERCARD</span>
         </div>
     </section>
 
