@@ -56,8 +56,14 @@
         .add-to-cart-btn:hover { background-color: #0f2a1d; color: #e6c687; border-color: #0f2a1d; }
         .trust-badges-section { background-color: #fff; padding: 60px 5%; text-align: center; border-top: 1px solid #f0ecdf; border-bottom: 1px solid #f0ecdf; margin-bottom: 80px; }
         .trust-badges-section p { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 3px; color: #111111; font-weight: 700; margin-bottom: 30px; }
-        .badge-grid { display: flex; justify-content: center; align-items: center; gap: 45px; flex-wrap: wrap; padding: 10px 0; }
-        .paylater-badge { font-size: 0.8rem; text-transform: uppercase; font-weight: 700; background-color: #0f2a1d; color: #e6c687; padding: 8px 18px; letter-spacing: 2px; border: 1px solid #e6c687; }
+        .badge-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; max-width: 900px; margin: 0 auto; padding: 0; }
+        .service-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+        .paylater-badge, .service-badge { display: flex; align-items: center; justify-content: center; gap: 9px; font-size: 0.7rem; text-transform: uppercase; font-weight: 700; letter-spacing: 1.6px; padding: 16px 10px; border: 1px solid #e6c687; text-align: center; line-height: 1.25; }
+        .paylater-badge { background-color: #0f2a1d; color: #e6c687; }
+        .service-badge { background-color: #faf8f3; color: #0f2a1d; border-color: #ded7c4; }
+        .badge-mark { font-style: normal; font-size: 0.5rem; color: #e6c687; opacity: 0.85; }
+        .service-badge .badge-mark { color: #bfa76a; }
+        .trust-subheading { margin-top: 46px; }
         .luxury-metrics { background: linear-gradient(135deg, #0f2a1d 0%, #06140e 100%); color: #fff; padding: 80px 8%; text-align: center; border-top: 1px solid #e6c687; }
         .metrics-grid { display: flex; justify-content: center; align-items: center; gap: 80px; flex-wrap: wrap; }
         .metric-item .number { font-family: 'Cinzel', serif; font-size: 3.5rem; color: #e6c687; font-weight: 700; letter-spacing: 2px; display: block; margin-bottom: 5px; }
@@ -88,14 +94,26 @@
         footer .copyright { color: rgba(230, 198, 135, 0.6); margin-top: 20px; font-size: 0.8rem; font-weight: 600; }
         .admin-key { cursor: pointer; opacity: 0.2; }
 
-        @media (max-width: 1100px) {
-            .badge-grid { gap: 16px; }
-            .paylater-badge { font-size: 0.7rem; padding: 7px 12px; letter-spacing: 1px; }
+        @media (max-width: 780px) {
+            header { flex-direction: column; gap: 16px; padding: 18px 6%; position: static; }
+            nav ul { flex-wrap: wrap; justify-content: center; }
+            nav ul li { margin: 6px 10px; }
+            .logo-main { font-size: 1.35rem; letter-spacing: 3px; }
+            .logo-crest { font-size: 0.7rem; letter-spacing: 4px; }
+            .hero-content p { font-size: 1.05rem; }
+            .section-title { font-size: 1.6rem; letter-spacing: 2px; }
+            .metrics-grid { gap: 38px; }
+            .store-grid { padding: 0 6%; gap: 24px; }
+        }
+        @media (max-width: 760px) {
+            .badge-grid, .service-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
         }
         @media (max-width: 600px) {
             .hero { background-position: center top; }
-            .badge-grid { gap: 10px; }
-            .paylater-badge { font-size: 0.62rem; padding: 6px 10px; letter-spacing: 0.5px; }
+        }
+        @media (max-width: 460px) {
+            .badge-grid, .service-grid { grid-template-columns: 1fr; }
+            .paylater-badge, .service-badge { font-size: 0.65rem; padding: 14px 8px; }
         }
     </style>
 </head>
@@ -164,11 +182,18 @@
     <section class="trust-badges-section">
         <p>🔒 Trusted & Secure Payment Methods</p>
         <div class="badge-grid">
-            <span class="paylater-badge">💵 CASH ON DELIVERY</span>
-            <span class="paylater-badge">APPLE PAY</span>
-            <span class="paylater-badge">GOOGLE PAY</span>
-            <span class="paylater-badge">PAYPAL</span>
-            <span class="paylater-badge">VISA / MASTERCARD</span>
+            <span class="paylater-badge"><em class="badge-mark">◆</em>Cash On Delivery</span>
+            <span class="paylater-badge"><em class="badge-mark">◆</em>Direct Bank Transfer</span>
+            <span class="paylater-badge"><em class="badge-mark">◆</em>Fawran Instant</span>
+        </div>
+        <p class="trust-subheading">Service & Delivery Promise</p>
+        <div class="badge-grid service-grid">
+            <span class="service-badge"><em class="badge-mark">◆</em>GCC Express Delivery</span>
+            <span class="service-badge"><em class="badge-mark">◆</em>Worldwide Shipping</span>
+            <span class="service-badge"><em class="badge-mark">◆</em>WhatsApp Checkout</span>
+            <span class="service-badge"><em class="badge-mark">◆</em>Secure Verified Order</span>
+            <span class="service-badge"><em class="badge-mark">◆</em>Luxury Gift Packaging</span>
+            <span class="service-badge"><em class="badge-mark">◆</em>Dedicated Client Care</span>
         </div>
     </section>
 
