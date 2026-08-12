@@ -1,1 +1,23 @@
-[]
+[
+  {
+    "id": 1001,
+    "name": "Navy Pleated Front Abaya",
+    "category": "Luxury Abaya",
+    "price": 100,
+    "img": "abaya-navy-100.png"
+  },
+  {
+    "id": 1002,
+    "name": "Black Embroidered Panel Abaya",
+    "category": "Luxury Abaya",
+    "price": 100,
+    "img": "abaya-black-embroidered-100.png"
+  },
+  {
+    "id": 1003,
+    "name": "Black Jacquard Open Abaya",
+    "category": "Luxury Abaya",
+    "price": 100,
+    "img": "abaya-black-jacquard-100.png"
+  }
+]
