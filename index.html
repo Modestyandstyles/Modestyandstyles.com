@@ -478,5 +478,57 @@
         renderShowroom = function () { _origRenderShowroom.apply(this, arguments); groupShowroomByCategory(); };
         groupShowroomByCategory();
     </script>
+<script>
+(function(){
+  var FOLDERS=[
+    {id:'luxury-abaya',label:'Luxury Abaya',sub:'Haute couture modest wear'},
+    {id:'baby-dress',label:'Baby Dress',sub:'Little ones, big elegance'}
+  ];
+  function folderOf(c){c=(c||'').toLowerCase();return /baby|kid|child|girl|boy/.test(c)?'baby-dress':'luxury-abaya';}
+  var css=document.createElement('style');
+  css.textContent='.category-heading{display:none!important}'
+  +'.folder-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:36px;max-width:1050px;margin:0 auto 70px;padding:0 24px}'
+  +'.folder-card{position:relative;border:1px solid #e6c687;border-radius:6px;overflow:hidden;cursor:pointer;background:#0d2b1d;transition:transform .3s,box-shadow .3s}'
+  +'.folder-card:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(0,0,0,.28)}'
+  +'.folder-card img{width:100%;height:340px;object-fit:cover;display:block;opacity:.82}'
+  +'.folder-blank{height:340px;display:flex;align-items:center;justify-content:center;font-size:3.4rem;color:#e6c687;background:radial-gradient(circle at 50% 40%,#154029,#0b2417)}'
+  +'.folder-meta{position:absolute;left:0;right:0;bottom:0;padding:24px;background:linear-gradient(to top,rgba(8,32,22,.95),rgba(8,32,22,0));text-align:center}'
+  +'.folder-meta h3{font-family:Cinzel,serif;color:#e6c687;letter-spacing:3px;text-transform:uppercase;font-size:1.2rem;margin:0 0 6px}'
+  +'.folder-meta p{color:#f3ead9;font-size:.8rem;letter-spacing:1px;margin:0;opacity:.85}'
+  +'.folder-count{display:inline-block;margin-top:10px;font-size:.72rem;letter-spacing:2px;color:#e6c687;border:1px solid #e6c687;border-radius:20px;padding:3px 12px}'
+  +'.folder-back{display:block;margin:0 auto 26px;background:none;border:1px solid #0f2a1d;color:#0f2a1d;font-family:Montserrat,sans-serif;letter-spacing:2px;font-size:.75rem;text-transform:uppercase;padding:10px 22px;border-radius:2px;cursor:pointer}'
+  +'.folder-back:hover{background:#e6c687;border-color:#e6c687}'
+  +'.folder-title{text-align:center;font-family:Cinzel,serif;letter-spacing:4px;text-transform:uppercase;color:#0f2a1d;margin:0 0 22px;font-size:1.35rem}';
+  document.head.appendChild(css);
+  var grid=document.getElementById('productShowcaseContainer');
+  var view=document.createElement('div');view.className='folder-grid';view.id='folderView';
+  grid.parentNode.insertBefore(view,grid);
+  var bar=document.createElement('div');bar.id='folderBar';bar.style.display='none';
+  grid.parentNode.insertBefore(bar,grid);
+  var active=null;
+  function cards(){return [].slice.call(grid.querySelectorAll('.product-card'));}
+  function catOf(c){var e=c.querySelector('.product-category');return e?e.textContent:'';}
+  function paint(){view.innerHTML='';FOLDERS.forEach(function(f){
+    var mine=cards().filter(function(c){return folderOf(catOf(c))===f.id;});
+    var i=(mine.length&&mine[0].querySelector('img'))?mine[0].querySelector('img').src:'';
+    var d=document.createElement('div');d.className='folder-card';
+    d.innerHTML=(i?'<img alt="'+f.label+'" src="'+i+'">':'<div class="folder-blank">&#9670;</div>')
+      +'<div class="folder-meta"><h3>'+f.label+'</h3><p>'+f.sub+'</p><span class="folder-count">'+mine.length+' ITEMS</span></div>';
+    d.onclick=function(){openF(f.id);};view.appendChild(d);});}
+  function openF(id){active=id;var f=FOLDERS.filter(function(x){return x.id===id;})[0];
+    view.style.display='none';bar.style.display='block';bar.innerHTML='';
+    var b=document.createElement('button');b.className='folder-back';b.textContent='\u2190 Back to Folders';b.onclick=show;bar.appendChild(b);
+    var h=document.createElement('div');h.className='folder-title';h.textContent=f.label;bar.appendChild(h);
+    grid.style.display='';
+    cards().forEach(function(c){c.style.display=(folderOf(catOf(c))===id)?'':'none';});}
+  function show(){active=null;grid.style.display='none';bar.style.display='none';view.style.display='grid';paint();}
+  try{storeProducts.forEach(function(p){p.category=folderOf(p.category+' '+p.name)==='baby-dress'?'Baby Dress':'Luxury Abaya';});}catch(e){}
+  var orig=window.renderShowroom;
+  window.renderShowroom=function(){orig.apply(this,arguments);active?openF(active):show();};
+  var sel=document.getElementById('new-cat');
+  if(sel){sel.innerHTML='<option value="Luxury Abaya">Luxury Abaya</option><option value="Baby Dress">Baby Dress</option>';}
+  try{renderShowroom();}catch(e){show();}
+})();
+</script>
 </body>
 </html>
