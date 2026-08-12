@@ -481,8 +481,8 @@
 <script>
 (function(){
   var FOLDERS=[
-    {id:'luxury-abaya',label:'Luxury Abaya',sub:'Haute couture modest wear'},
-    {id:'baby-dress',label:'Baby Dress',sub:'Little ones, big elegance'}
+    {id:'luxury-abaya',label:'Luxury Abaya',sub:'Haute couture modest wear',cover:'https://images.pexels.com/photos/9881075/pexels-photo-9881075.jpeg?auto=compress&cs=tinysrgb&w=1200'},
+    {id:'baby-dress',label:'Baby Dress',sub:'Little ones, big elegance',cover:'https://images.pexels.com/photos/28490754/pexels-photo-28490754/free-photo-of-adorable-toddler-in-white-dress-outdoors.jpeg?auto=compress&cs=tinysrgb&w=1200'}
   ];
   function folderOf(c){c=(c||'').toLowerCase();return /baby|kid|child|girl|boy/.test(c)?'baby-dress':'luxury-abaya';}
   var css=document.createElement('style');
@@ -510,7 +510,7 @@
   function catOf(c){var e=c.querySelector('.product-category');return e?e.textContent:'';}
   function paint(){view.innerHTML='';FOLDERS.forEach(function(f){
     var mine=cards().filter(function(c){return folderOf(catOf(c))===f.id;});
-    var i=(mine.length&&mine[0].querySelector('img'))?mine[0].querySelector('img').src:'';
+    var i=f.cover||((mine.length&&mine[0].querySelector('img'))?mine[0].querySelector('img').src:'');
     var d=document.createElement('div');d.className='folder-card';
     d.innerHTML=(i?'<img alt="'+f.label+'" src="'+i+'">':'<div class="folder-blank">&#9670;</div>')
       +'<div class="folder-meta"><h3>'+f.label+'</h3><p>'+f.sub+'</p><span class="folder-count">'+mine.length+' ITEMS</span></div>';
