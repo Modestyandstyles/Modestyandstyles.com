@@ -480,11 +480,19 @@
     </script>
 <script>
 (function(){
+  var C1='https://images.pexels.com/photos/9881075/pexels-photo-9881075.jpeg?auto=compress&cs=tinysrgb&w=1200';
+  var C2='https://images.pexels.com/photos/28490754/pexels-photo-28490754/free-photo-of-adorable-toddler-in-white-dress-outdoors.jpeg?auto=compress&cs=tinysrgb&w=1200';
   var FOLDERS=[
-    {id:'luxury-abaya',label:'Luxury Abaya',sub:'Haute couture modest wear',cover:'https://images.pexels.com/photos/9881075/pexels-photo-9881075.jpeg?auto=compress&cs=tinysrgb&w=1200'},
-    {id:'baby-dress',label:'Baby Dress',sub:'Little ones, big elegance',cover:'https://images.pexels.com/photos/28490754/pexels-photo-28490754/free-photo-of-adorable-toddler-in-white-dress-outdoors.jpeg?auto=compress&cs=tinysrgb&w=1200'}
+    {id:'luxury-abaya',label:'Luxury Abaya',sub:'Haute couture modest wear',cover:C1,subs:[
+      {id:'ab100',label:'Abaya for 100 QAR',sub:'Everyday elegance'},
+      {id:'ab160',label:'Abaya for 160 QAR',sub:'Premium drape'}
+    ]},
+    {id:'baby-dress',label:'Baby Dress',sub:'Little ones, big elegance',cover:C2,subs:null}
   ];
+  function byId(id){return FOLDERS.filter(function(f){return f.id===id;})[0];}
   function folderOf(c){c=(c||'').toLowerCase();return /baby|kid|child|girl|boy/.test(c)?'baby-dress':'luxury-abaya';}
+  function priceOf(c){var e=c.querySelector('.product-price');return e?(parseFloat(e.textContent.replace(/[^0-9.]/g,''))||0):0;}
+  function subOf(c){return priceOf(c)<130?'ab100':'ab160';}
   var css=document.createElement('style');
   css.textContent='.category-heading{display:none!important}'
   +'.folder-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:36px;max-width:1050px;margin:0 auto 70px;padding:0 24px}'
@@ -501,33 +509,64 @@
   +'.folder-title{text-align:center;font-family:Cinzel,serif;letter-spacing:4px;text-transform:uppercase;color:#0f2a1d;margin:0 0 22px;font-size:1.35rem}';
   document.head.appendChild(css);
   var grid=document.getElementById('productShowcaseContainer');
-  var view=document.createElement('div');view.className='folder-grid';view.id='folderView';
-  grid.parentNode.insertBefore(view,grid);
   var bar=document.createElement('div');bar.id='folderBar';bar.style.display='none';
   grid.parentNode.insertBefore(bar,grid);
-  var active=null;
+  var view=document.createElement('div');view.className='folder-grid';view.id='folderView';
+  grid.parentNode.insertBefore(view,grid);
+  var state={folder:null,sub:null};
   function cards(){return [].slice.call(grid.querySelectorAll('.product-card'));}
   function catOf(c){var e=c.querySelector('.product-category');return e?e.textContent:'';}
-  function paint(){view.innerHTML='';FOLDERS.forEach(function(f){
-    var mine=cards().filter(function(c){return folderOf(catOf(c))===f.id;});
-    var i=f.cover||((mine.length&&mine[0].querySelector('img'))?mine[0].querySelector('img').src:'');
+  function inFolder(c,id){return folderOf(catOf(c))===id;}
+  function tile(label,subtitle,cover,count,fn){
     var d=document.createElement('div');d.className='folder-card';
-    d.innerHTML=(i?'<img alt="'+f.label+'" src="'+i+'">':'<div class="folder-blank">&#9670;</div>')
-      +'<div class="folder-meta"><h3>'+f.label+'</h3><p>'+f.sub+'</p><span class="folder-count">'+mine.length+' ITEMS</span></div>';
-    d.onclick=function(){openF(f.id);};view.appendChild(d);});}
-  function openF(id){active=id;var f=FOLDERS.filter(function(x){return x.id===id;})[0];
+    d.innerHTML=(cover?'<img alt="'+label+'" src="'+cover+'">':'<div class="folder-blank">&#9670;</div>')
+      +'<div class="folder-meta"><h3>'+label+'</h3><p>'+subtitle+'</p><span class="folder-count">'+count+' ITEMS</span></div>';
+    d.onclick=fn;return d;}
+  function backBtn(text,fn){
+    var b=document.createElement('button');b.className='folder-back';b.textContent=text;b.onclick=fn;return b;}
+  function titleEl(text){
+    var h=document.createElement('div');h.className='folder-title';h.textContent=text;return h;}
+  function showTop(){
+    state.folder=null;state.sub=null;
+    grid.style.display='none';bar.style.display='none';view.style.display='grid';view.innerHTML='';
+    FOLDERS.forEach(function(f){
+      var n=cards().filter(function(c){return inFolder(c,f.id);}).length;
+      view.appendChild(tile(f.label,f.sub,f.cover,n,function(){openFolder(f.id);}));});}
+  function openFolder(id){
+    var f=byId(id);state.folder=id;state.sub=null;
+    if(!f.subs){showProducts(f,null);return;}
+    grid.style.display='none';
+    bar.style.display='block';bar.innerHTML='';
+    bar.appendChild(backBtn('\u2190 Back to Folders',showTop));
+    bar.appendChild(titleEl(f.label));
+    view.style.display='grid';view.innerHTML='';
+    f.subs.forEach(function(s){
+      var mine=cards().filter(function(c){return inFolder(c,f.id)&&subOf(c)===s.id;});
+      var im=(mine.length&&mine[0].querySelector('img'))?mine[0].querySelector('img').src:f.cover;
+      view.appendChild(tile(s.label,s.sub,im,mine.length,function(){openSub(f.id,s.id);}));});}
+  function openSub(fid,sid){state.folder=fid;state.sub=sid;showProducts(byId(fid),sid);}
+  function showProducts(f,sid){
     view.style.display='none';bar.style.display='block';bar.innerHTML='';
-    var b=document.createElement('button');b.className='folder-back';b.textContent='\u2190 Back to Folders';b.onclick=show;bar.appendChild(b);
-    var h=document.createElement('div');h.className='folder-title';h.textContent=f.label;bar.appendChild(h);
+    var label=f.label;
+    if(sid){
+      bar.appendChild(backBtn('\u2190 Back to '+f.label,function(){openFolder(f.id);}));
+      var s=f.subs.filter(function(x){return x.id===sid;})[0];if(s)label=s.label;
+    }else{bar.appendChild(backBtn('\u2190 Back to Folders',showTop));}
+    bar.appendChild(titleEl(label));
     grid.style.display='';
-    cards().forEach(function(c){c.style.display=(folderOf(catOf(c))===id)?'':'none';});}
-  function show(){active=null;grid.style.display='none';bar.style.display='none';view.style.display='grid';paint();}
+    cards().forEach(function(c){
+      var ok=inFolder(c,f.id)&&(!sid||subOf(c)===sid);
+      c.style.display=ok?'':'none';});}
+  function restore(){
+    if(state.folder&&state.sub){openSub(state.folder,state.sub);}
+    else if(state.folder){openFolder(state.folder);}
+    else{showTop();}}
   try{storeProducts.forEach(function(p){p.category=folderOf(p.category+' '+p.name)==='baby-dress'?'Baby Dress':'Luxury Abaya';});}catch(e){}
   var orig=window.renderShowroom;
-  window.renderShowroom=function(){orig.apply(this,arguments);active?openF(active):show();};
+  window.renderShowroom=function(){orig.apply(this,arguments);restore();};
   var sel=document.getElementById('new-cat');
   if(sel){sel.innerHTML='<option value="Luxury Abaya">Luxury Abaya</option><option value="Baby Dress">Baby Dress</option>';}
-  try{renderShowroom();}catch(e){show();}
+  try{renderShowroom();}catch(e){showTop();}
 })();
 </script>
 </body>
