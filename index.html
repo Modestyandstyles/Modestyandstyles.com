@@ -562,8 +562,29 @@
     else if(state.folder){openFolder(state.folder);}
     else{showTop();}}
   try{storeProducts.forEach(function(p){p.category=folderOf(p.category+' '+p.name)==='baby-dress'?'Baby Dress':'Luxury Abaya';});}catch(e){}
+  var SIZES=['52','54','56','58','60'];
+  var scss=document.createElement('style');
+  scss.textContent='.size-row{display:flex;align-items:center;gap:10px;margin:10px 0 12px}'
+  +'.size-lbl{font-size:.68rem;letter-spacing:2px;color:#e6c687;font-family:Cinzel,serif;white-space:nowrap}'
+  +'.size-pick{flex:1;padding:8px 10px;border:1px solid #e6c687;background:#0d2b1d;color:#f3ead9;border-radius:4px;font-size:.82rem;letter-spacing:1px;outline:none;cursor:pointer}';
+  document.head.appendChild(scss);
+  function addSizes(){
+    cards().forEach(function(c){
+      if(c.querySelector('.size-pick'))return;
+      var nm=c.querySelector('.product-name'),pe=c.querySelector('.product-price');
+      var nme=nm?nm.textContent:'',prc=pe?(parseFloat(pe.textContent.replace(/[^0-9.]/g,''))||0):0;
+      var w=document.createElement('div');w.className='size-row';
+      var lb=document.createElement('span');lb.className='size-lbl';lb.textContent='SIZE';
+      var sl=document.createElement('select');sl.className='size-pick';
+      SIZES.forEach(function(s){var o=document.createElement('option');o.value=s;o.textContent=s;sl.appendChild(o);});
+      w.appendChild(lb);w.appendChild(sl);
+      var btn=c.querySelector('.add-to-cart-btn');
+      if(btn&&btn.parentNode){btn.parentNode.insertBefore(w,btn);btn.removeAttribute('onclick');
+        btn.onclick=function(){try{window.addToCart(nme+' - Size '+sl.value,prc);}catch(e){}};}
+      else{var inf=c.querySelector('.product-info');if(inf)inf.appendChild(w);}
+    });}
   var orig=window.renderShowroom;
-  window.renderShowroom=function(){orig.apply(this,arguments);restore();};
+  window.renderShowroom=function(){orig.apply(this,arguments);addSizes();restore();};
   var sel=document.getElementById('new-cat');
   if(sel){sel.innerHTML='<option value="Luxury Abaya">Luxury Abaya</option><option value="Baby Dress">Baby Dress</option>';}
   try{renderShowroom();}catch(e){showTop();}
