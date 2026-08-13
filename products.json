@@ -16,5 +16,9 @@
   { "id": 1786800100002, "name": "Black Beaded Placket Abaya", "category": "Luxury Abaya", "price": 100, "img": "products/abayablackbeadedplacket100.jpg" },
   { "id": 1786800100003, "name": "Black Jacquard Trim Open Abaya", "category": "Luxury Abaya", "price": 100, "img": "products/abayablackjacquardtrim100.jpg" },
   { "id": 1786800100004, "name": "Black Minimal Lapel Abaya", "category": "Luxury Abaya", "price": 100, "img": "products/abayablacklapel100.jpg" },
-  { "id": 1786800100005, "name": "Black Beaded Motif Open Abaya", "category": "Luxury Abaya", "price": 100, "img": "products/abayablackbeadedmotif100.jpg" }
+  { "id": 1786800100005, "name": "Black Beaded Motif Open Abaya", "category": "Luxury Abaya", "price": 100, "img": "products/abayablackbeadedmotif100.jpg" },
+  { "id": 1786800100006, "name": "Black Pintuck Beaded Abaya", "category": "Luxury Abaya", "price": 100, "img": "products/abayablackpintuck100.jpg" },
+  { "id": 1786800100007, "name": "Black Beaded Shawl Collar Abaya", "category": "Luxury Abaya", "price": 100, "img": "products/abayablackshawlcollar100.jpg" },
+  { "id": 1786800100008, "name": "Black Beaded Cascade Open Abaya", "category": "Luxury Abaya", "price": 100, "img": "products/abayablackcascade100.jpg" },
+  { "id": 1786800100009, "name": "Emerald Beaded Motif Open Abaya", "category": "Luxury Abaya", "price": 100, "img": "products/abayaemeraldbeaded100.jpg" }
 ]
