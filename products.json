@@ -4,5 +4,8 @@
   { "id": 1003, "name": "Black Jacquard Open Abaya", "category": "Luxury Abaya", "price": 100, "img": "abaya-black-jacquard-100.png" },
   { "id": 1004, "name": "Black Signature Open Abaya", "category": "Luxury Abaya", "price": 100, "img": "products/luxury-abaya/black-open-abaya.png" },
   { "id": 1005, "name": "Black Heritage Embroidery Abaya", "category": "Luxury Abaya", "price": 100, "img": "products/luxury-abaya/black-heritage-embroidery-abaya.png" },
-  { "id": 1006, "name": "Navy Jacquard Open Abaya", "category": "Luxury Abaya", "price": 100, "img": "products/luxury-abaya/navy-jacquard-abaya.png" }
+  { "id": 1006, "name": "Navy Jacquard Open Abaya", "category": "Luxury Abaya", "price": 100, "img": "products/luxury-abaya/navy-jacquard-abaya.png" },
+  { "id": 1007, "name": "Teal Button Front Abaya", "category": "Luxury Abaya", "price": 100, "img": "products/tealbuttonfrontabaya.jpg" },
+  { "id": 1008, "name": "Charcoal Button Front Abaya", "category": "Luxury Abaya", "price": 100, "img": "products/charcoalbuttonfrontabaya.jpg" },
+  { "id": 1009, "name": "Sage Floral Print Abaya", "category": "Luxury Abaya", "price": 100, "img": "products/sagefloralprintabaya.jpg" }
 ]
