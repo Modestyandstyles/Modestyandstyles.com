@@ -11,5 +11,10 @@
   { "id": 1786644459606, "name": "Black Kimono Open Abaya", "category": "Luxury Abaya", "price": 100, "img": "products/abayablackkimono100.jpg" },
   { "id": 1786644480534, "name": "Midnight Paisley Print Abaya", "category": "Luxury Abaya", "price": 100, "img": "products/abayamidnightpaisley100.jpg" },
   { "id": 1786644483371, "name": "Navy Rose Print Abaya", "category": "Luxury Abaya", "price": 100, "img": "products/abayanavyrose100.jpg" },
-  { "id": 1786644485129, "name": "Beige Ginkgo Print Abaya", "category": "Luxury Abaya", "price": 100, "img": "products/abayabeigeginkgo100.jpg" }
+  { "id": 1786644485129, "name": "Beige Ginkgo Print Abaya", "category": "Luxury Abaya", "price": 100, "img": "products/abayabeigeginkgo100.jpg" },
+  { "id": 1786800100001, "name": "Rose Gold Blossom Embroidered Abaya", "category": "Luxury Abaya", "price": 100, "img": "products/abayarosegoldblossom100.jpg" },
+  { "id": 1786800100002, "name": "Black Beaded Placket Abaya", "category": "Luxury Abaya", "price": 100, "img": "products/abayablackbeadedplacket100.jpg" },
+  { "id": 1786800100003, "name": "Black Jacquard Trim Open Abaya", "category": "Luxury Abaya", "price": 100, "img": "products/abayablackjacquardtrim100.jpg" },
+  { "id": 1786800100004, "name": "Black Minimal Lapel Abaya", "category": "Luxury Abaya", "price": 100, "img": "products/abayablacklapel100.jpg" },
+  { "id": 1786800100005, "name": "Black Beaded Motif Open Abaya", "category": "Luxury Abaya", "price": 100, "img": "products/abayablackbeadedmotif100.jpg" }
 ]
