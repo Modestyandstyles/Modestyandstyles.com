@@ -1,4 +1,3 @@
-
 [
   { "id": 1001, "name": "Navy Pleated Front Abaya", "category": "Luxury Abaya", "price": 100, "img": "abaya-navy-100.png" },
   { "id": 1002, "name": "Black Embroidered Panel Abaya", "category": "Luxury Abaya", "price": 100, "img": "abaya-black-embroidered-100.png" },
@@ -33,5 +32,9 @@
   { "id": 1786900160009, "name": "Grey Beaded Floral Abaya", "category": "Luxury Abaya", "price": 160, "img": "products/abayagreybeadedfloral160.jpg" },
   { "id": 1786900160010, "name": "Mauve Satin Belted Abaya Robe", "category": "Luxury Abaya", "price": 160, "img": "products/abayamauvesatinbelted160.jpg" },
   { "id": 1786900160011, "name": "Black Gold Damask Kimono Abaya", "category": "Luxury Abaya", "price": 160, "img": "products/abayablackgolddamaskkimono160.jpg" },
-  { "id": 1786900160012, "name": "Black Floral Applique Open Abaya", "category": "Luxury Abaya", "price": 160, "img": "products/abayablackfloralapplique160.jpg" }
+  { "id": 1786900160012, "name": "Black Floral Applique Open Abaya", "category": "Luxury Abaya", "price": 160, "img": "products/abayablackfloralapplique160.jpg" },
+  { "id": 1786900160013, "name": "Black Lace Panel Button-Front Abaya", "category": "Luxury Abaya", "price": 160, "img": "products/abayablacklacepanel160.jpg" },
+  { "id": 1786900160014, "name": "Black Beaded Blossom Open Abaya", "category": "Luxury Abaya", "price": 160, "img": "products/abayablackbeadedblossom160.jpg" },
+  { "id": 1786900160015, "name": "Navy Ivory Petal Beaded Abaya", "category": "Luxury Abaya", "price": 160, "img": "products/abayanavyivorypetal160.jpg" },
+  { "id": 1786900160016, "name": "Ivory Navy Rosette Abaya", "category": "Luxury Abaya", "price": 160, "img": "products/abayaivorynavyrosette160.jpg" }
 ]
