@@ -36,5 +36,14 @@
   { "id": 1786900160013, "name": "Black Lace Panel Button-Front Abaya", "category": "Luxury Abaya", "price": 160, "img": "products/abayablacklacepanel160.jpg" },
   { "id": 1786900160014, "name": "Black Beaded Blossom Open Abaya", "category": "Luxury Abaya", "price": 160, "img": "products/abayablackbeadedblossom160.jpg" },
   { "id": 1786900160015, "name": "Navy Ivory Petal Beaded Abaya", "category": "Luxury Abaya", "price": 160, "img": "products/abayanavyivorypetal160.jpg" },
-  { "id": 1786900160016, "name": "Ivory Navy Rosette Abaya", "category": "Luxury Abaya", "price": 160, "img": "products/abayaivorynavyrosette160.jpg" }
+  { "id": 1786900160016, "name": "Ivory Navy Rosette Abaya", "category": "Luxury Abaya", "price": 160, "img": "products/abayaivorynavyrosette160.jpg" },
+  { "id": 1786901990001, "name": "Peach Petal Bow Set", "category": "Baby Dress", "price": 99, "img": "products/kids-dress/babydress01.jpg" },
+  { "id": 1786901990002, "name": "Blush Rose Blossom Set", "category": "Baby Dress", "price": 99, "img": "products/kids-dress/babydress02.jpg" },
+  { "id": 1786901990003, "name": "Plum Petal Tiered Set", "category": "Baby Dress", "price": 99, "img": "products/kids-dress/babydress03.jpg" },
+  { "id": 1786901990004, "name": "Golden Poppy Pleated Set", "category": "Baby Dress", "price": 99, "img": "products/kids-dress/babydress04.jpg" },
+  { "id": 1786901990005, "name": "Amber Poppy Pleated Set", "category": "Baby Dress", "price": 99, "img": "products/kids-dress/babydress05.jpg" },
+  { "id": 1786901990006, "name": "Saffron Meadow Tiered Dress", "category": "Baby Dress", "price": 99, "img": "products/kids-dress/babydress06.jpg" },
+  { "id": 1786901990007, "name": "Azure Bloom Tiered Set", "category": "Baby Dress", "price": 99, "img": "products/kids-dress/babydress07.jpg" },
+  { "id": 1786901990008, "name": "Rose Dot Lace Set", "category": "Baby Dress", "price": 99, "img": "products/kids-dress/babydress08.jpg" },
+  { "id": 1786901990009, "name": "Terracotta Dot Lace Set", "category": "Baby Dress", "price": 99, "img": "products/kids-dress/babydress09.jpg" }
 ]

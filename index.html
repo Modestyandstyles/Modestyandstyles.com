@@ -563,6 +563,8 @@
     else{showTop();}}
   try{storeProducts.forEach(function(p){p.category=folderOf(p.category+' '+p.name)==='baby-dress'?'Baby Dress':'Luxury Abaya';});}catch(e){}
   var SIZES=['52','54','56','58','60'];
+  var BABY_SIZES=['1Y','2Y','3Y','4Y','5Y','6Y','7Y','8Y','9Y','10Y'];
+  function sizesFor(c){return folderOf(catOf(c))==='baby-dress'?BABY_SIZES:SIZES;}
   var scss=document.createElement('style');
   scss.textContent='.size-row{display:flex;align-items:center;gap:10px;margin:10px 0 12px}'
   +'.size-lbl{font-size:.68rem;letter-spacing:2px;color:#e6c687;font-family:Cinzel,serif;white-space:nowrap}'
@@ -576,7 +578,7 @@
       var w=document.createElement('div');w.className='size-row';
       var lb=document.createElement('span');lb.className='size-lbl';lb.textContent='SIZE';
       var sl=document.createElement('select');sl.className='size-pick';
-      SIZES.forEach(function(s){var o=document.createElement('option');o.value=s;o.textContent=s;sl.appendChild(o);});
+      sizesFor(c).forEach(function(s){var o=document.createElement('option');o.value=s;o.textContent=s;sl.appendChild(o);});
       w.appendChild(lb);w.appendChild(sl);
       var btn=c.querySelector('.add-to-cart-btn');
       if(btn&&btn.parentNode){btn.parentNode.insertBefore(w,btn);btn.removeAttribute('onclick');
